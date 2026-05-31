@@ -1,36 +1,183 @@
+:root {
+    --blue: #0647e8;
+    --purple: #642cff;
+    --pink: #ff3d8b;
+    --orange: #ff9f1c;
+    --yellow: #ffd23f;
+    --dark: #111827;
+    --light: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    color: var(--light);
+    min-height: 100vh;
 }
 
-.card {
-    border-radius: 12px;
+.app-bg {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(255, 61, 139, 0.35), transparent 35%),
+        radial-gradient(circle at top right, rgba(255, 210, 63, 0.22), transparent 30%),
+        linear-gradient(135deg, var(--blue), var(--purple), #b414b8);
 }
 
-.card-header {
-    border-radius: 12px 12px 0 0 !important;
+.app-container {
+    max-width: 980px;
+}
+
+.app-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.app-subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.app-icon {
+    width: 94px;
+    height: 94px;
+    border-radius: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 28px;
+}
+
+.section-title {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.section-title p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.section-number {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.form-label {
+    font-weight: 600;
+    color: white;
+}
+
+.form-control {
+    border: none;
+    border-radius: 14px;
+    padding: 13px 15px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(255, 61, 139, 0.28);
+}
+
+.btn-main {
+    border: none;
+    border-radius: 14px;
+    padding: 12px 22px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, var(--pink), var(--orange));
+}
+
+.btn-main:hover {
+    color: white;
+    opacity: 0.92;
+}
+
+.btn-outline-light {
+    border-radius: 14px;
+    padding: 12px 22px;
+}
+
+.custom-search .form-control {
+    border-radius: 14px 0 0 14px;
+}
+
+.custom-search .btn {
+    border-radius: 0 14px 14px 0;
+}
+
+.app-alert {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    border-radius: 16px;
+    padding: 16px;
 }
 
 .article-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--dark);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 16px;
 }
 
 .article-card h3 {
     font-size: 20px;
+    font-weight: 700;
 }
 
 .article-card p {
-    margin-bottom: 8px;
+    color: #4b5563;
 }
 
 .article-date {
     font-size: 13px;
-    color: #666;
+    color: #6b7280;
 }
 
 .err_mess {
     min-height: 18px;
+    font-weight: 600;
+}
+
+footer {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 576px) {
+    .app-header h1 {
+        font-size: 34px;
+    }
+
+    .glass-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
 }

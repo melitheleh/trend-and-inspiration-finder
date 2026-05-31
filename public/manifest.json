@@ -1,0 +1,23 @@
+{
+    "name": "Marketing Trend Planner",
+    "short_name": "TrendPlanner",
+    "description": "Aplikacja PWA do wyszukiwania trendów marketingowych i zapisywania inspiracji do kampanii.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#0647e8",
+    "theme_color": "#642cff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
