@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "agentberlin 0.148.0",
+    "description": "Python SDK for Agent Berlin - AI-powered SEO and AEO automation",
+    "url": "https://pypi.org/project/agentberlin/0.148.0/",
+    "publishedAt": "2026-05-30T18:29:40Z"
+  },
+  {
+    "title": "AI Update, May 29, 2026: AI News and Views From the Past Week",
+    "description": "Catch up on select AI news and developments since Friday, May 22. Stay in the know. Read the full article at MarketingProfs",
+    "url": "https://www.marketingprofs.com/opinions/2026/54875/ai-update-may-29-2026-ai-news-and-views-from-the-past-week",
+    "publishedAt": "2026-05-29T14:00:00Z"
+  },
+  {
+    "title": "Veracity Over Volume: Stay Standing During the Great Content Collapse",
+    "description": "AI answer engines are cannibalizing click-through rates. But trustworthy marketing (not simply more content) is the answer.\nContinue reading...",
+    "url": "https://www.cmswire.com/customer-experience/veracity-over-volume-stay-standing-during-the-great-content-collapse/",
+    "publishedAt": "2026-05-29T11:11:01Z"
+  }
+]

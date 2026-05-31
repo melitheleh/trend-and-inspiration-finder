@@ -1,3 +1,6 @@
+const API_KEY = 'f96963457fa449f6821c9577567cbc93';
+
+const registerSection = document.querySelector('#registerSection');
 const userName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const pass1 = document.querySelector('#password1');
@@ -16,13 +19,17 @@ const savedSection = document.querySelector('#savedSection');
 function showError(input, text) {
     const box = input.parentElement;
     const errMess = box.querySelector('.err_mess');
+
     errMess.textContent = text;
+    input.classList.add('input-error');
 }
 
 function clearError(input) {
     const box = input.parentElement;
     const errMess = box.querySelector('.err_mess');
+
     errMess.textContent = '';
+    input.classList.remove('input-error');
 }
 
 function checkInputLength(input, minLength) {
@@ -89,20 +96,45 @@ registerForm.addEventListener('submit', (e) => {
         isPasswordsSame &&
         isEmailValid
     ) {
+       
         registerInfo.innerHTML = `
             <div class="alert alert-success">
                 Rejestracja poprawna. Możesz korzystać z aplikacji.
             </div>
         `;
-        appSection.classList.remove('d-none');
-        newsSection.classList.remove('d-none');
-        savedSection.classList.remove('d-none');
+        registerSection.classList.add('d-none');
+
+        registerSection.classList.add('register-hide');
+
+            setTimeout(() => {
+
+                registerSection.classList.add('d-none');
+
+                appSection.classList.remove('d-none');
+                newsSection.classList.remove('d-none');
+                savedSection.classList.remove('d-none');
+
+                appSection.classList.add('section-show');
+                newsSection.classList.add('section-show');
+                savedSection.classList.add('section-show');
+
+            }, 500);
+
+            appSection.insertAdjacentHTML('beforebegin', `
+                <div class="alert alert-success rounded-4 shadow-sm">
+                    Rejestracja poprawna. Możesz korzystać z aplikacji.
+                </div>  
+                `);
+                
+
     } else {
+       
         registerInfo.innerHTML = `
             <div class="alert alert-danger">
                 Popraw błędy w formularzu.
             </div>
         `;
+        
     }
 });
 
@@ -123,20 +155,29 @@ searchBtn.addEventListener('click', () => {
 
 function getNews(query) {
     newsBox.innerHTML = `
-        <div class="alert alert-info">
+        <div class="app-alert">
             Pobieranie artykułów...
         </div>
     `;
 
-    fetch(`/api/news?q=${query}`)
+    fetch(`https://newsapi.org/v2/everything?q=${query}&language=en&pageSize=10&sortBy=publishedAt&apiKey=${API_KEY}`)
         .then(response => response.json())
         .then(data => {
+            if (data.status === 'error') {
+                newsBox.innerHTML = `
+                    <div class="alert alert-danger rounded-4">
+                        Błąd API: ${data.message}
+                    </div>
+                `;
+                return;
+            }
+
             showNews(data.articles);
         })
         .catch(() => {
             newsBox.innerHTML = `
-                <div class="alert alert-danger">
-                    Nie udało się pobrać danych z API.
+                <div class="alert alert-danger rounded-4">
+                    Nie udało się pobrać danych z NewsAPI.
                 </div>
             `;
         });
