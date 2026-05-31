@@ -78,8 +78,8 @@ const server = http.createServer((req, res) => {
     }
 
     let filePath = req.url === '/'
-        ? path.join(__dirname, 'public', 'index.html')
-        : path.join(__dirname, 'public', req.url);
+        ? path.join(__dirname, 'index.html')
+        : path.join(__dirname, req.url);
 
     const ext = path.extname(filePath);
 
