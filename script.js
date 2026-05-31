@@ -9,6 +9,9 @@ const searchInput = document.querySelector('#searchInput');
 const searchBtn = document.querySelector('#searchBtn');
 const newsBox = document.querySelector('#newsBox');
 const savedBox = document.querySelector('#savedBox');
+const appSection = document.querySelector('#appSection');
+const newsSection = document.querySelector('#newsSection');
+const savedSection = document.querySelector('#savedSection');
 
 function showError(input, text) {
     const box = input.parentElement;
@@ -91,6 +94,9 @@ registerForm.addEventListener('submit', (e) => {
                 Rejestracja poprawna. Możesz korzystać z aplikacji.
             </div>
         `;
+        appSection.classList.remove('d-none');
+        newsSection.classList.remove('d-none');
+        savedSection.classList.remove('d-none');
     } else {
         registerInfo.innerHTML = `
             <div class="alert alert-danger">
